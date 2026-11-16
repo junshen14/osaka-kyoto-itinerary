@@ -1,0 +1,3903 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#1f1a2e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>大阪 · 京都 · 奈良 — 2026年11月 每日行程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f7f1e6;
+        --paper2: #efe5d3;
+        --ink: #2a2420;
+        --ink2: #5d534a;
+        --line: #e2d5bf;
+        --card: #fffdf8;
+        --red: #b8322f;
+        --gold: #c99a3b;
+        --night: #1f1a2e;
+        --accent: var(--red);
+        --serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+        --sans:
+          "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans",
+          "Yu Gothic", sans-serif;
+        --ease: cubic-bezier(0.2, 0.75, 0.2, 1);
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 68px;
+      }
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        color: var(--ink);
+        line-height: 1.68;
+        font-size: 15.5px;
+        background:
+          radial-gradient(
+            1200px 600px at 10% 20%,
+            rgba(201, 154, 59, 0.07),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 90% 70%,
+            rgba(184, 50, 47, 0.06),
+            transparent 60%
+          ),
+          var(--paper);
+        -webkit-font-smoothing: antialiased;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      a {
+        color: var(--accent);
+      }
+      b {
+        font-weight: 700;
+        color: #1d1814;
+      }
+      i[class^="m-"] {
+        font-style: normal;
+      }
+      .m-star {
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      /* ---------- falling leaves ---------- */
+      #leaves {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        position: relative;
+        z-index: 0;
+        min-height: 92svh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        color: #fff7ea;
+        text-align: center;
+        background: linear-gradient(
+          180deg,
+          #1f1a2e 0%,
+          #3b2440 38%,
+          #8a3138 72%,
+          #d8743a 100%
+        );
+      }
+      .hero-sun {
+        position: absolute;
+        width: min(54vw, 420px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        left: 50%;
+        top: 56%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(
+          circle at 50% 45%,
+          #ffcf7a,
+          #f08a3c 55%,
+          #c9452f 100%
+        );
+        box-shadow: 0 0 120px 40px rgba(240, 138, 60, 0.35);
+        animation: sunrise 2.2s var(--ease) both;
+      }
+      @keyframes sunrise {
+        from {
+          transform: translate(-50%, -10%);
+          opacity: 0;
+        }
+        to {
+          transform: translate(-50%, -50%);
+          opacity: 0.95;
+        }
+      }
+      .hero-mtn {
+        position: absolute;
+        left: -5%;
+        right: -5%;
+        bottom: 0;
+      }
+      .hero-mtn.m1 {
+        height: 38%;
+        background: #4a2236;
+        clip-path: polygon(
+          0 60%,
+          12% 35%,
+          22% 50%,
+          35% 20%,
+          48% 45%,
+          58% 30%,
+          70% 52%,
+          82% 28%,
+          92% 45%,
+          100% 35%,
+          100% 100%,
+          0 100%
+        );
+        animation: mtn 1.8s 0.2s var(--ease) both;
+      }
+      .hero-mtn.m2 {
+        height: 24%;
+        background: #24182a;
+        clip-path: polygon(
+          0 50%,
+          15% 30%,
+          28% 55%,
+          40% 38%,
+          55% 60%,
+          68% 35%,
+          80% 55%,
+          90% 40%,
+          100% 52%,
+          100% 100%,
+          0 100%
+        );
+        animation: mtn 1.8s 0.4s var(--ease) both;
+      }
+      @keyframes mtn {
+        from {
+          transform: translateY(40%);
+        }
+        to {
+          transform: none;
+        }
+      }
+      .hero-inner {
+        position: relative;
+        padding: 24px 16px;
+        margin-top: -6vh;
+        max-width: 760px;
+      }
+      .hero-kicker {
+        letter-spacing: 0.4em;
+        font-size: 12px;
+        opacity: 0.85;
+        animation: fadeUp 0.9s 0.2s var(--ease) both;
+      }
+      .hero-title {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: clamp(34px, 9.5vw, 96px);
+        margin: 0.15em 0 0.1em;
+        line-height: 1.05;
+        text-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
+        white-space: nowrap;
+      }
+      .hero-title .sep {
+        color: var(--gold);
+        margin: 0 0.08em;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .hero-sub {
+        font-size: clamp(15px, 2.4vw, 19px);
+        opacity: 0.92;
+        animation: fadeUp 0.9s 0.5s var(--ease) both;
+      }
+      .hero-count {
+        margin: 22px auto 26px;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 10px;
+        padding: 10px 24px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        animation: fadeUp 0.9s 0.7s var(--ease) both;
+      }
+      .hero-count .big {
+        font-family: var(--serif);
+        font-size: 36px;
+        font-weight: 900;
+        color: #ffd58a;
+        line-height: 1;
+      }
+      .hero-cta {
+        display: inline-block;
+        padding: 10px 24px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #fff7ea;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 0.15em;
+        animation: fadeUp 0.9s 0.9s var(--ease) both;
+      }
+
+      /* ---------- sticky day nav ---------- */
+      .daynav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(247, 241, 230, 0.9);
+        backdrop-filter: blur(12px) saturate(1.2);
+        -webkit-backdrop-filter: blur(12px) saturate(1.2);
+        border-bottom: 1px solid var(--line);
+      }
+      .daynav-in {
+        position: relative;
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding: 8px 12px;
+        max-width: 1080px;
+        margin: 0 auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .daynav-in::-webkit-scrollbar {
+        display: none;
+      }
+      .daynav a {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 48px;
+        padding: 5px 9px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--ink2);
+        font-size: 11px;
+        line-height: 1.25;
+        transition:
+          background 0.25s,
+          color 0.25s;
+      }
+      .daynav a b {
+        font-family: var(--serif);
+        font-size: 15px;
+        color: inherit;
+      }
+      .daynav a:hover {
+        background: var(--paper2);
+      }
+      .daynav a.active {
+        background: var(--ink);
+        color: #fff;
+      }
+      .daynav a.nav-x {
+        justify-content: center;
+        font-size: 12.5px;
+        font-weight: 700;
+        padding: 5px 11px;
+      }
+
+      /* ---------- filter bar ---------- */
+      .filter-bar {
+        position: sticky;
+        top: 59px;
+        z-index: 45;
+        background: rgba(247, 241, 230, 0.92);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+        padding: 8px 12px;
+      }
+      .filter-in {
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        align-items: center;
+      }
+      .filter-in::-webkit-scrollbar {
+        display: none;
+      }
+      .f-btn {
+        flex: 0 0 auto;
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--ink2);
+        font-family: var(--sans);
+        font-size: 13px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .f-btn.active {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+
+      main {
+        position: relative;
+        z-index: 2;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 14px 100px;
+      }
+
+      /* ---------- section headings ---------- */
+      .sec-h {
+        font-family: var(--serif);
+        font-size: clamp(22px, 4vw, 30px);
+        margin: 48px 0 18px;
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .sec-h::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--line), transparent);
+        min-width: 40px;
+      }
+      .sec-h small {
+        font-family: var(--sans);
+        font-size: 13px;
+        color: var(--ink2);
+        font-weight: 400;
+      }
+
+      /* ---------- overview ---------- */
+      .ov-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+      }
+      .ov-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 14px 14px 16px;
+        border-radius: 16px;
+        background: var(--card);
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        overflow: hidden;
+        box-shadow: 0 6px 20px -14px rgba(60, 30, 10, 0.3);
+        transition: transform 0.25s var(--ease);
+      }
+      .ov-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 4px;
+        background: var(--accent);
+      }
+      .ov-card:active {
+        transform: scale(0.98);
+      }
+      .ov-top {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .ov-d {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 1;
+        color: var(--accent);
+      }
+      .ov-m {
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        color: var(--ink2);
+        line-height: 1.3;
+      }
+      .ov-city {
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: 0.05em;
+      }
+      .ov-theme {
+        font-size: 12.5px;
+        line-height: 1.5;
+        color: var(--ink2);
+      }
+      .intro-notes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .intro-notes .legend {
+        grid-row: span 2;
+      }
+      .legend ul {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+        display: grid;
+        gap: 4px;
+        font-size: 14px;
+      }
+
+      /* ---------- city accents ---------- */
+      .city-osaka {
+        --accent: #d0582a;
+        --tint: #fbeee5;
+      }
+      .city-nara {
+        --accent: #5f8a34;
+        --tint: #eef3e4;
+      }
+      .city-kyoto {
+        --accent: #ad2e3a;
+        --tint: #f8e9e9;
+      }
+      .city-depart {
+        --accent: #38557a;
+        --tint: #e8eef5;
+      }
+
+      /* ---------- day sections ---------- */
+      .day {
+        padding-top: 44px;
+      }
+      .day-head {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        padding: 20px 22px;
+        border-radius: 20px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          120deg,
+          var(--accent),
+          color-mix(in srgb, var(--accent) 55%, #1f1a2e)
+        );
+        box-shadow: 0 16px 36px -20px
+          color-mix(in srgb, var(--accent) 80%, #000);
+      }
+      .day-num {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1;
+        padding-right: 18px;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .day-num .lbl {
+        font-size: 10px;
+        letter-spacing: 0.3em;
+        opacity: 0.85;
+      }
+      .day-num .n {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 48px;
+      }
+      .day-date {
+        font-size: 13px;
+        opacity: 0.92;
+        letter-spacing: 0.04em;
+      }
+      .wk-en {
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        opacity: 0.75;
+        margin-left: 4px;
+      }
+      .hol {
+        margin-left: 6px;
+        background: rgba(255, 255, 255, 0.22);
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 11.5px;
+        font-weight: 700;
+      }
+      .day-title {
+        font-family: var(--serif);
+        font-size: clamp(18px, 3vw, 24px);
+        margin: 4px 0 10px;
+        line-height: 1.35;
+        font-weight: 900;
+      }
+      .chips {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .chip {
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.28);
+      }
+      .day.today .day-head {
+        outline: 3px solid var(--gold);
+        outline-offset: 4px;
+      }
+
+      .callout {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--accent);
+        border-radius: 12px;
+        padding: 12px 15px;
+        margin: 14px 0;
+        font-size: 14.5px;
+      }
+      .callout.weather {
+        border-left-color: var(--gold);
+      }
+      .sub-h {
+        font-family: var(--serif);
+        font-size: 18px;
+        margin: 26px 0 10px;
+        color: var(--accent);
+      }
+
+      /* ---------- timeline ---------- */
+      .timeline {
+        list-style: none;
+        margin: 18px 0 0;
+        padding: 0;
+        position: relative;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 75px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: var(--line);
+        border-radius: 2px;
+      }
+      .tl-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 22px;
+        margin-bottom: 10px;
+      }
+      .tl-item.hidden-by-filter {
+        display: none;
+      }
+      .tl-time {
+        font-weight: 700;
+        font-size: 13px;
+        color: var(--accent);
+        text-align: right;
+        padding-top: 12px;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.3;
+      }
+      .dot {
+        position: absolute;
+        left: 70px;
+        top: 15px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--card);
+        border: 3px solid var(--accent);
+        z-index: 1;
+      }
+      .tl-item.pick .dot {
+        background: var(--accent);
+      }
+      .tl-body {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 15px;
+        box-shadow: 0 4px 14px -10px rgba(60, 30, 10, 0.25);
+      }
+      .tl-item.pick .tl-body {
+        background: linear-gradient(90deg, var(--tint), var(--card) 55%);
+      }
+      .tl-item.sub {
+        margin-top: -4px;
+      }
+      .tl-item.sub .tl-body {
+        margin-left: 16px;
+        background: var(--paper2);
+        font-size: 14px;
+        border-style: dashed;
+      }
+      .tl-item.sub .dot {
+        width: 8px;
+        height: 8px;
+        left: 72px;
+        border-width: 2px;
+      }
+      .tl-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+        align-items: center;
+      }
+      .cost {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--accent);
+        background: var(--tint);
+        padding: 2px 10px;
+        border-radius: 999px;
+      }
+      .tag {
+        display: inline-block;
+        font-size: 11.5px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: var(--paper2);
+        color: var(--ink2);
+      }
+
+      /* ---------- notes ---------- */
+      .notes-box {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 14px 16px 8px;
+        margin-top: 16px;
+      }
+      .notes-title {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+      }
+      .notes {
+        margin: 0 0 8px;
+        padding-left: 18px;
+        font-size: 14px;
+      }
+      .notes li {
+        margin: 5px 0;
+      }
+      .notes li::marker {
+        color: var(--accent);
+      }
+      .legend {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px 16px;
+      }
+
+      /* ---------- generic table ---------- */
+      .tbl-wrap {
+        overflow-x: auto;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: var(--card);
+        margin: 10px 0;
+        -webkit-overflow-scrolling: touch;
+      }
+      table.grid {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 13.5px;
+        min-width: 560px;
+      }
+      .grid th {
+        background: var(--tint);
+        color: var(--accent);
+        text-align: left;
+        padding: 9px 12px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .grid td {
+        padding: 9px 12px;
+        border-top: 1px solid var(--line);
+        vertical-align: top;
+      }
+
+      /* ---------- bookings / closures / phrasebook ---------- */
+      .checklist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+      .check label {
+        display: grid;
+        grid-template-columns: 26px 135px 1fr;
+        gap: 12px;
+        align-items: start;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 15px;
+        cursor: pointer;
+      }
+      .check input {
+        position: absolute;
+        opacity: 0;
+      }
+      .check .box {
+        width: 22px;
+        height: 22px;
+        border-radius: 7px;
+        border: 2px solid var(--red);
+        margin-top: 2px;
+        display: grid;
+        place-items: center;
+      }
+      .check input:checked + .box {
+        background: var(--red);
+      }
+      .check input:checked + .box::after {
+        content: "✓";
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .check:has(input:checked) label {
+        background: var(--paper2);
+        opacity: 0.65;
+      }
+      .check:has(input:checked) .what {
+        text-decoration: line-through;
+      }
+      .when {
+        font-weight: 700;
+        color: var(--red);
+        font-size: 13.5px;
+      }
+
+      .closed-grid,
+      .phrase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
+      }
+      .closed,
+      .phrase {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px 16px;
+        border-top: 4px solid #8c8378;
+      }
+      .phrase {
+        border-top-color: var(--gold);
+      }
+      .c-name,
+      .p-jp {
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+      .c-st,
+      .p-zh {
+        font-size: 13.5px;
+        color: var(--ink2);
+      }
+      .src {
+        margin-top: 48px;
+        font-size: 12px;
+        color: var(--ink2);
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+      }
+
+      /* ---------- mobile bottom bar ---------- */
+      .mob-bar {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        z-index: 60;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 6px;
+        background: rgba(31, 26, 46, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 8px 10px;
+        border-radius: 999px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      .mob-bar a,
+      .mob-bar button {
+        background: none;
+        border: 0;
+        color: #fff7ea;
+        font-family: var(--sans);
+        font-size: 12px;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .mob-bar a:active,
+      .mob-bar button:active {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .mob-bar .today-pill {
+        background: var(--gold);
+        color: #2a1d05;
+        font-weight: 700;
+      }
+
+      /* ---------- google map links ---------- */
+      .map {
+        color: inherit;
+        text-decoration: underline dotted
+          color-mix(in srgb, var(--accent) 70%, transparent);
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+        border-radius: 4px;
+        padding: 1px 2px;
+      }
+      .map:hover,
+      .map:focus-visible {
+        color: var(--accent);
+        background: var(--tint, var(--paper2));
+        text-decoration-style: solid;
+      }
+      .map .pin {
+        display: inline-block;
+        font-size: 0.8em;
+        margin-left: 2px;
+        text-decoration: none;
+      }
+      .day-head .map {
+        text-decoration-color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* ---------- responsive ---------- */
+      @media (max-width: 860px) {
+        .ov-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .intro-notes {
+          grid-template-columns: 1fr;
+        }
+        .intro-notes .legend {
+          grid-row: auto;
+        }
+      }
+      @media (max-width: 560px) {
+        body {
+          font-size: 15px;
+        }
+        .hero {
+          min-height: 82svh;
+        }
+        .day-head {
+          padding: 16px;
+          gap: 12px;
+          border-radius: 16px;
+        }
+        .day-num {
+          padding-right: 12px;
+        }
+        .day-num .n {
+          font-size: 38px;
+        }
+        .timeline::before {
+          left: 54px;
+        }
+        .tl-item {
+          grid-template-columns: 46px 1fr;
+          gap: 16px;
+        }
+        .tl-time {
+          font-size: 12px;
+          padding-top: 11px;
+        }
+        .dot {
+          left: 49px;
+          top: 14px;
+        }
+        .tl-item.sub .dot {
+          left: 51px;
+        }
+        .tl-item.sub .tl-body {
+          margin-left: 8px;
+        }
+        .tl-body {
+          padding: 10px 13px;
+        }
+        .check label {
+          grid-template-columns: 26px 1fr;
+          gap: 8px;
+        }
+        .check .what {
+          grid-column: 2;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+        #leaves {
+          display: none;
+        }
+      }
+      @media print {
+        #leaves,
+        .daynav,
+        .filter-bar,
+        .mob-bar,
+        .map .pin,
+        .hero-sun,
+        .hero-mtn,
+        .hero-cta {
+          display: none !important;
+        }
+        .hero {
+          min-height: auto;
+          background: none;
+          color: var(--ink);
+          padding: 20px 0;
+        }
+        .day {
+          break-inside: auto;
+          padding-top: 20px;
+        }
+        .tl-item {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="leaves" aria-hidden="true"></canvas>
+    <header class="hero">
+      <div class="hero-sun"></div>
+      <div class="hero-mtn m1"></div>
+      <div class="hero-mtn m2"></div>
+      <div class="hero-inner">
+        <div class="hero-kicker">KANSAI · AUTUMN 2026</div>
+        <h1 class="hero-title">
+          大阪<span class="sep">·</span>京都<span class="sep">·</span>奈良
+        </h1>
+        <div class="hero-sub">2026年11月17日 – 26日 · 十天红叶之旅</div>
+        <div class="hero-count" id="count"></div>
+        <br />
+        <a class="hero-cta" href="#overview">开始看行程 ↓</a>
+      </div>
+    </header>
+
+    <nav class="daynav" id="daynav">
+      <div class="daynav-in">
+        <a href="#day1" data-day="1"><b>1</b><span>11/17</span></a>
+        <a href="#day2" data-day="2"><b>2</b><span>11/18</span></a>
+        <a href="#day3" data-day="3"><b>3</b><span>11/19</span></a>
+        <a href="#day4" data-day="4"><b>4</b><span>11/20</span></a>
+        <a href="#day5" data-day="5"><b>5</b><span>11/21</span></a>
+        <a href="#day6" data-day="6"><b>6</b><span>11/22</span></a>
+        <a href="#day7" data-day="7"><b>7</b><span>11/23</span></a>
+        <a href="#day8" data-day="8"><b>8</b><span>11/24</span></a>
+        <a href="#day9" data-day="9"><b>9</b><span>11/25</span></a>
+        <a href="#day10" data-day="10"><b>10</b><span>11/26</span></a>
+        <a href="#bookings" class="nav-x">预约</a>
+        <a href="#closed" class="nav-x">避坑</a>
+        <a href="#phrases" class="nav-x">日语</a>
+      </div>
+    </nav>
+
+    <div class="filter-bar">
+      <div class="filter-in">
+        <button class="f-btn active" data-filter="all">全部行程</button>
+        <button class="f-btn" data-filter="pick">★ 必去/自选</button>
+        <button class="f-btn" data-filter="food">🍽️ 美食</button>
+        <button class="f-btn" data-filter="transit">🚆 交通</button>
+      </div>
+    </div>
+
+    <main>
+      <section class="intro" id="overview">
+        <h2 class="sec-h">十天一览</h2>
+        <div class="ov-grid">
+          <a class="ov-card city-osaka" href="#day1"
+            ><div class="ov-top">
+              <span class="ov-d">17</span
+              ><span class="ov-m">NOV<br />周二</span>
+            </div>
+            <div class="ov-city">大阪</div>
+            <div class="ov-theme">19:20 落地 → 新世界 → 拉面 → 7-Eleven</div></a
+          >
+          <a class="ov-card city-osaka" href="#day2"
+            ><div class="ov-top">
+              <span class="ov-d">18</span
+              ><span class="ov-m">NOV<br />周三</span>
+            </div>
+            <div class="ov-city">大阪</div>
+            <div class="ov-theme">
+              🎂 生日：大阪城 → 心斋桥乌冬 → 道顿堀 → 购物 → 涮涮锅
+            </div></a
+          >
+          <a class="ov-card city-osaka" href="#day3"
+            ><div class="ov-top">
+              <span class="ov-d">19</span
+              ><span class="ov-m">NOV<br />周四</span>
+            </div>
+            <div class="ov-city">大阪</div>
+            <div class="ov-theme">
+              日本环球影城（USJ）→ 心斋桥 和牛饭 + 大阪烧宵夜
+            </div></a
+          >
+          <a class="ov-card city-osaka" href="#day4"
+            ><div class="ov-top">
+              <span class="ov-d">20</span
+              ><span class="ov-m">NOV<br />周五</span>
+            </div>
+            <div class="ov-city">大阪</div>
+            <div class="ov-theme">
+              7-Eleven早餐 → 胜尾寺 → 箕面瀑布 → 新世界：八重勝 + 大興寿司 →
+              关东煮
+            </div></a
+          >
+          <a class="ov-card city-osaka" href="#day5"
+            ><div class="ov-top">
+              <span class="ov-d">21</span
+              ><span class="ov-m">NOV<br />周六</span>
+            </div>
+            <div class="ov-city">大阪</div>
+            <div class="ov-theme">
+              新世界早午餐 → 梅田：牛太本陣 · LINKS/LUCUA · 鳗鱼串 · Grenier ·
+              きじ → 京都
+            </div></a
+          >
+          <a class="ov-card city-nara" href="#day6"
+            ><div class="ov-top">
+              <span class="ov-d">22</span
+              ><span class="ov-m">NOV<br />周日</span>
+            </div>
+            <div class="ov-city">宇治 · 奈良</div>
+            <div class="ov-theme">
+              宇治（朝雾桥、平等院、中村藤吉）→ 12:30 去奈良（东大寺、若草山）→
+              釜粋乌冬
+            </div></a
+          >
+          <a class="ov-card city-kyoto" href="#day7"
+            ><div class="ov-top">
+              <span class="ov-d">23</span
+              ><span class="ov-m">NOV<br />周一 🎌</span>
+            </div>
+            <div class="ov-city">京都</div>
+            <div class="ov-theme">
+              南禅寺 → 永观堂 → かつくら炸猪排 → 锦市场 → 北野天满宫 → 金阁寺 →
+              河原町烧鸟
+            </div></a
+          >
+          <a class="ov-card city-kyoto" href="#day8"
+            ><div class="ov-top">
+              <span class="ov-d">24</span
+              ><span class="ov-m">NOV<br />周二</span>
+            </div>
+            <div class="ov-city">京都</div>
+            <div class="ov-theme">
+              嵯峨野小火车 → 常寂光寺 → 竹林 → 天龙寺 → 渡月桥 → 京都永旺 →
+              炸牛排/寿司
+            </div></a
+          >
+          <a class="ov-card city-kyoto" href="#day9"
+            ><div class="ov-top">
+              <span class="ov-d">25</span
+              ><span class="ov-m">NOV<br />周三</span>
+            </div>
+            <div class="ov-city">京都</div>
+            <div class="ov-theme">
+              平等寺 → 清水寺 → 三年坂/二年坂 → 祇园夜游 → 鯛壽司 → 河原町 →
+              回伏见
+            </div></a
+          >
+          <a class="ov-card city-depart" href="#day10"
+            ><div class="ov-top">
+              <span class="ov-d">26</span
+              ><span class="ov-m">NOV<br />周四</span>
+            </div>
+            <div class="ov-city">京都 → 回程</div>
+            <div class="ov-theme">
+              早上伏见稻荷 → 京都站 → ~15:00 JR Haruka 特急 → 关西机场（KIX）→
+              槟城
+            </div></a
+          >
+        </div>
+        <div class="intro-notes">
+          <div class="legend">
+            <div class="notes-title">图例</div>
+            <ul>
+              <li><i class="m-star">★</i> = 你自己选的（保留）</li>
+              <li><i class="m-gold">🏆</i> = Tabelog 百名店</li>
+              <li><i class="m-warn">⚠️</i> = 需要注意/陷阱</li>
+              <li><i class="m-recheck">🔁</i> = 11月初再确认</li>
+            </ul>
+          </div>
+          <p class="callout">
+            <b>饮食原则：</b> 以省钱为主（午餐每人 ≤ ¥2,000，晚餐每人 ≤
+            ¥4,000）。只有 <b>11月18日生日</b> 那天大吃一顿。营业时间一律以
+            Tabelog 为准。
+          </p>
+          <p class="callout weather">
+            🌤️ 整个行程日落时间约 <b>16:50</b>。大阪白天 15–18 °C，晚上 8–10
+            °C；箕面再冷 2–4 °C。
+          </p>
+        </div>
+      </section>
+
+      <!-- DAY 1 -->
+      <section
+        class="day city-osaka"
+        id="day1"
+        data-day="1"
+        data-date="2026-11-17"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">01</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月17日 · 周二 <span class="wk-en">TUE</span>
+            </div>
+            <h2 class="day-title">抵达关西 → 新世界拉面 → 7-Eleven</h2>
+            <div class="chips">
+              <span class="chip">大阪</span
+              ><span class="chip"
+                >🏠
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=RLiS+house+%E9%80%9A%E5%A4%A9%E9%96%A3+%E5%A4%A7%E9%98%AA%E5%B8%82%E6%B5%AA%E9%80%9F%E5%8C%BA%E6%81%B5%E7%BE%8E%E9%A0%88%E6%9D%B11-16-9"
+                  target="_blank"
+                  rel="noopener"
+                  >Rlis House（RL），新世界<span class="pin">📍</span></a
+                ></span
+              >
+            </div>
+          </div>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">19:20</div>
+            <div class="tl-body">
+              <div>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF"
+                  target="_blank"
+                  rel="noopener"
+                  >抵达关西机场<span class="pin">📍</span></a
+                >。入境、取行李、海关需 60–75 分钟
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">~20:20</div>
+            <div class="tl-body">
+              <div>
+                💴 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF+%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB+%E3%82%A4%E3%82%AA%E3%83%B3%E9%8A%80%E8%A1%8C+ATM"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>取日元：6号行李转盘对面的 AEON ATM</b
+                  ><span class="pin">📍</span></a
+                >
+                —
+                等行李时顺便取，出海关前就搞定。取够前两天用的现金（五味八珍和新世界很多店只收现金）。<em
+                  >备用：第1航站楼 1F 到达大厅正前方有一排 ATM（2台 Seven Bank +
+                  日本邮政），Seven Bank 24小时可用</em
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">~20:40</div>
+            <div class="tl-body">
+              <div>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E4%BB%8A%E5%AE%AE%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>南海 空港急行 → 新今宫</b><span class="pin">📍</span></a
+                >，直达，约45分钟
+              </div>
+              <div class="tl-tags"><span class="cost">¥970</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">~21:30</div>
+            <div class="tl-body">
+              <div>
+                步行10分钟到
+                RL（恵美須東1-16-9），放行李。现金不够的话，下面那家 7-Eleven
+                也有 ATM（离 RL 只要3分钟）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">~22:00</div>
+            <div class="tl-body">
+              <div>
+                🍜 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%81%AA%E3%81%AB%E3%82%8F%E3%81%AE%E4%BA%94%E5%91%B3%E5%85%AB%E7%8F%8D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3+%E5%A4%A7%E9%98%AA%E5%B8%82%E6%B5%AA%E9%80%9F%E5%8C%BA%E6%81%B5%E7%BE%8E%E9%A0%88%E6%9D%B12-6-20"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>なにわの五味八珍ラーメン</b><span class="pin">📍</span></a
+                >，恵美須東2-6-20。Tabelog：<b>10:00–04:00，每天营业</b>。酱油豚骨拉面约
+                ¥850、煎饺、炸鸡
+              </div>
+              <div class="tl-tags"><span class="cost">~¥1,200</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="food">
+            <span class="dot"></span>
+            <div class="tl-time">~22:50</div>
+            <div class="tl-body">
+              <div>
+                🏪
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3+%E5%A4%A7%E9%98%AA%E6%81%B5%E7%BE%8E%E9%A0%88%E8%A5%BF1%E4%B8%81%E7%9B%AE%E5%BA%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>セブンイレブン 大阪恵美須西1丁目店</b
+                  ><span class="pin">📍</span></a
+                >（恵美須町站旁）— 24小时营业，有 Seven Bank
+                ATM。买宵夜、饮料、明天早餐（新世界里面没有 7-Eleven，这家离 RL
+                最近）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">~23:10</div>
+            <div class="tl-body"><div>步行3分钟回 RL，休息</div></div>
+          </li>
+        </ol>
+        <div class="notes-box">
+          <div class="notes-title">备选（若五味八珍21:00关门）</div>
+          <ul class="notes">
+            <li>
+              🏆
+              <a
+                class="map"
+                href="https://www.google.com/maps/search/?api=1&query=%E7%84%A1%E9%89%84%E7%A0%B2+%E5%A4%A7%E9%98%AA%E5%BA%97"
+                target="_blank"
+                rel="noopener"
+                ><b>無鉄砲 大阪店</b><span class="pin">📍</span></a
+              >：浓郁豚骨，Tabelog 3.71，营业到22:30，只收现金，步行10分钟
+            </li>
+            <li>
+              🏆
+              <a
+                class="map"
+                href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%A4%AA%E9%83%8E+%E6%9C%AC%E5%BA%97+%E5%A4%A7%E9%98%AA"
+                target="_blank"
+                rel="noopener"
+                ><b>福太郎 本店</b><span class="pin">📍</span></a
+              >：大阪烧，Tabelog 3.72，最后点单22:45，坐一站到日本桥
+            </li>
+            <li>
+              最后退路：<a
+                class="map"
+                href="https://www.google.com/maps/search/?api=1&query=%E4%B8%B2%E3%81%8B%E3%81%A4%E6%A8%AA%E7%B6%B1+%E9%80%9A%E5%A4%A9%E9%96%A3%E5%BA%97"
+                target="_blank"
+                rel="noopener"
+                >串かつ横綱 通天閣店<span class="pin">📍</span></a
+              >（24小时营业，炸串）
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- DAY 2 -->
+      <section
+        class="day city-osaka"
+        id="day2"
+        data-day="2"
+        data-date="2026-11-18"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">02</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月18日 · 周三 <span class="wk-en">WED</span>
+              <span class="hol">🎂 生日</span>
+            </div>
+            <h2 class="day-title">
+              大阪城 → 心斋桥乌冬 → 道顿堀 → 心斋桥购物 → 涮涮锅
+            </h2>
+            <div class="chips">
+              <span class="chip">大阪</span><span class="chip">🏠 RL</span>
+            </div>
+          </div>
+        </header>
+        <p class="callout">
+          💡 <b>今天不用买大阪周游卡：</b>只去西之丸庭园 +
+          天守阁（不坐御座船/道顿堀游船），周游卡只值约 ¥2,200，比 ¥3,500
+          售价低。直接用 ICOCA 付就好。
+        </p>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">09:15</div>
+            <div class="tl-body">
+              <div>
+                惠美须町 → 堺筋线 → 堺筋本町 → 中央线 → 谷町四丁目（1-B /
+                9号出口）→ 步行8分钟到 大手門
+              </div>
+              <div class="tl-tags"><span class="cost">¥240</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">09:45</div>
+            <div class="tl-body">
+              <div>
+                ⛩️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%9F%8E+%E8%A5%BF%E3%81%AE%E4%B8%B8%E5%BA%AD%E5%9C%92"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>西之丸庭園</b><span class="pin">📍</span></a
+                >
+                — 拍天守阁 + 护城河的最佳角度（09:00–16:30）
+              </div>
+              <div class="tl-tags"><span class="cost">¥300</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">10:20</div>
+            <div class="tl-body">
+              <div>穿过 <b>樱门</b>（300年银杏树就在旁边 — 免费、顺路）</div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">10:30–11:30</div>
+            <div class="tl-body">
+              <div>
+                🏯 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%9F%8E%E5%A4%A9%E5%AE%88%E9%96%A3"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>大阪城天守閣</b><span class="pin">📍</span></a
+                >（09:00–18:00）。坐电梯到5F，再走楼梯到8F 展望台。💡
+                在官网买网上门票，不用排队
+              </div>
+              <div class="tl-tags"><span class="cost">¥1,200</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">11:45</div>
+            <div class="tl-body">
+              <div>
+                谷町四丁目 → 中央线 → 本町 → 御堂筋线 → 心斎橋（约15分钟）
+              </div>
+              <div class="tl-tags"><span class="cost">¥240</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">12:05–13:00</div>
+            <div class="tl-body">
+              <div>
+                🍜 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%BF%83%E6%96%8E%E6%A9%8B+%E3%81%AB%E3%81%97%E5%AE%B6+%E6%9C%AC%E5%BA%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>心斎橋 にし家 本店</b><span class="pin">📍</span></a
+                >
+                — 招牌是 うどんちり（乌冬锅），午餐也有定食和丼。营业
+                11:00–22:30 🔁。晚上吃大餐，午餐别吃太饱
+              </div>
+              <div class="tl-tags"><span class="cost">~¥1,500</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">13:00</div>
+            <div class="tl-body">
+              <div>心斎橋 → 御堂筋线 → なんば（1站），步行约8分钟</div>
+              <div class="tl-tags"><span class="cost">¥190</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">13:15–13:45</div>
+            <div class="tl-body">
+              <div>
+                ⛩️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%9B%A3%E6%B3%A2%E5%85%AB%E9%98%AA%E7%A5%9E%E7%A4%BE"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>難波八阪神社</b><span class="pin">📍</span></a
+                >
+                — 12米狮子头舞台。17:00关门
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">14:00</div>
+            <div class="tl-body">
+              <div>
+                📸 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E9%A0%93%E5%A0%80"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>道顿堀白天打卡</b><span class="pin">📍</span></a
+                >：かに道楽大螃蟹、くいだおれ太郎、金龍招牌。🐙 还饿的话去
+                <b>わなか</b> 吃章鱼烧
+              </div>
+              <div class="tl-tags"><span class="cost">~¥500</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">14:35</div>
+            <div class="tl-body">
+              <div>
+                ☕ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=LiLo+Coffee+Roasters+%E5%A4%A7%E9%98%AA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>LiLo Coffee Roasters</b><span class="pin">📍</span></a
+                >（西心斎橋 美国村）— 自家烘焙咖啡 🔁 出发前确认营业时间
+              </div>
+              <div class="tl-tags"><span class="cost">~¥600</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">15:00</div>
+            <div class="tl-body">
+              <div>
+                👕 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=WEGO+%E5%BF%83%E6%96%8E%E6%A9%8B%E5%BA%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>WEGO 心斎橋店（美国村）</b><span class="pin">📍</span></a
+                >
+                — 平价潮流服饰，顺便逛美国村古着店（大多 11:00–20:00）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">15:45–17:45</div>
+            <div class="tl-body">
+              <div>
+                🛍️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%BF%83%E6%96%8E%E6%A9%8B%E7%AD%8B%E5%95%86%E5%BA%97%E8%A1%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>心斎橋筋购物</b><span class="pin">📍</span></a
+                >：GU · UNIQLO · 大丸心斎橋 · PARCO（6F 流行文化 /
+                <b>9F Hands 买鞋垫</b>）· BicCamera 难波店 · 🐶
+                <b>ペットパラダイス</b
+                >（心斎橋筋2-3-28，11:00–20:00，三合一宠物推车）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">17:45</div>
+            <div class="tl-body">
+              <div>
+                🥐 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=Le+Croissant+%E5%BF%83%E6%96%8E%E6%A9%8B"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Le Croissant Shinsaibashi</b
+                  ><span class="pin">📍</span></a
+                >
+                & ✨
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%88%8E%E6%A9%8B+%E3%82%B0%E3%83%AA%E3%82%B3"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>格力高广告牌亮灯</b><span class="pin">📍</span></a
+                >（日落后30分钟亮灯，在戎橋或河边步道拍）
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">18:30</div>
+            <div class="tl-body">
+              <div>
+                🍲 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=Wagyu+Sukiyaki+Kyoto+Gotengo+Dotonbori"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Wagyu Sukiyaki Kyoto Gotengo Dotonbori</b
+                  ><span class="pin">📍</span></a
+                >
+                — 🎂 生日晚餐！
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">20:00</div>
+            <div class="tl-body">
+              <div>
+                🛍️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86+%E9%81%93%E9%A0%93%E5%A0%80%E5%BA%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Don Quijote Dotonbori</b><span class="pin">📍</span></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">21:00</div>
+            <div class="tl-body"><div>🎂 回 hotel 休息</div></div>
+          </li>
+        </ol>
+        <div class="notes-box">
+          <div class="notes-title">小贴士 · Notes</div>
+          <ul class="notes">
+            <li>
+              🎂 蛋糕：りくろーおじさん（Rikuro）芝士蛋糕
+              難波本店，¥1,095，营业到20:00。在 Namba Factory 手机点单可免排队。
+            </li>
+            <li>⚠️ 如果之前订了 かに蔵 梅田 20:30，记得取消。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- DAY 3 -->
+      <section
+        class="day city-osaka"
+        id="day3"
+        data-day="3"
+        data-date="2026-11-19"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">03</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月19日 · 周四 <span class="wk-en">THU</span>
+            </div>
+            <h2 class="day-title">日本环球影城（USJ）→ 心斋桥宵夜</h2>
+            <div class="chips">
+              <span class="chip">大阪</span><span class="chip">🏠 RL</span>
+            </div>
+          </div>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="food">
+            <span class="dot"></span>
+            <div class="tl-time">06:30</div>
+            <div class="tl-body">
+              <div>便利店早餐（附近没有百名店在 07:00 前开门）</div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">06:50</div>
+            <div class="tl-body">
+              <div>JR 新今宫 → 环状线 → 西九条 → 环球城站，约25分钟</div>
+              <div class="tl-tags"><span class="cost">¥190–240</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">07:30</div>
+            <div class="tl-body">
+              <div>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B5%E3%83%AB%E3%83%BB%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3"
+                  target="_blank"
+                  rel="noopener"
+                  >到达入口<span class="pin">📍</span></a
+                >。QR 门票存在 USJ App 里，带好充电宝
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">一过闸门</div>
+            <div class="tl-body">
+              <div>
+                <b>马上抽超级任天堂世界整理券（定时入场）。</b>一人操作
+                App，另一人继续往前走
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">08:30</div>
+            <div class="tl-body">
+              <div>
+                <b>先玩耀西/咚奇刚矿车（Mine Cart Madness）</b
+                >，再玩马里奥赛车（超过50分钟走单人通道）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">10:20</div>
+            <div class="tl-body">
+              <div>哈利波特禁忌之旅，黄油啤酒（两人分一杯）</div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="food">
+            <span class="dot"></span>
+            <div class="tl-time">12:15</div>
+            <div class="tl-body">
+              <div>三把扫帚露台午餐，或 Happiness Cafe（饮料畅饮）</div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">13:00</div>
+            <div class="tl-body">
+              <div>
+                飞天翼龙 → 侏罗纪公园 → 好莱坞美梦，全部走 <b>单人通道</b>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">15:00</div>
+            <div class="tl-body"><div>看实时排队时间补玩</div></div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">17:30</div>
+            <div class="tl-body">
+              <div>
+                圣诞夜间表演 / 霍格沃茨投影秀 🔁
+                <em>出发前2周和前一晚再查时间</em>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">20:00</div>
+            <div class="tl-body">
+              <div>
+                出园 → JR 环球城 → 西九条 → 阪神なんば線 →
+                大阪難波（约30分钟）。太累就留在
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B5%E3%83%AB%E3%83%BB%E3%82%B7%E3%83%86%E3%82%A3%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF%E5%A4%A7%E9%98%AA"
+                  target="_blank"
+                  rel="noopener"
+                  >CityWalk<span class="pin">📍</span></a
+                >
+                吃。⚠️ 出园后不能再入园
+              </div>
+              <div class="tl-tags"><span class="cost">~¥400</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">20:40</div>
+            <div class="tl-body">
+              <div>
+                🥩 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=Wagyu+Speciality+Beef+bowl+Maeda+Suguru+%E5%BF%83%E6%96%8E%E6%A9%8B"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Wagyu Speciality Beef bowl Maeda Suguru</b
+                  ><span class="pin">📍</span></a
+                >（和牛饭，心斎橋）— 17:00–22:30，⚠️ 21:45 前一定要到
+              </div>
+              <div class="tl-tags"><span class="cost">~¥2,000</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">21:40</div>
+            <div class="tl-body">
+              <div>
+                🥞 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E5%A5%BD%E3%81%BF%E9%89%84%E6%9D%BF%E9%85%92%E5%A0%B4+dorajyu+%E5%BF%83%E6%96%8E%E6%A9%8B"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>お好み鉄板酒場 dorajyu</b><span class="pin">📍</span></a
+                >（大阪烧 + 铁板烧酒场）— 营业到 23:00
+              </div>
+              <div class="tl-tags"><span class="cost">~¥1,500</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">22:40</div>
+            <div class="tl-body">
+              <div>
+                御堂筋线 なんば / 心斎橋 → 動物園前，步行回 RL（约23:00）
+              </div>
+              <div class="tl-tags"><span class="cost">¥240</span></div>
+            </div>
+          </li>
+        </ol>
+        <div class="notes-box">
+          <div class="notes-title">小贴士 · Notes</div>
+          <ul class="notes">
+            <li>
+              ⚠️ <b>现场不卖门票。</b>需提前在网上买 1日影城门票（约
+              ¥8,900–9,900）。
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- DAY 4 -->
+      <section
+        class="day city-osaka"
+        id="day4"
+        data-day="4"
+        data-date="2026-11-20"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">04</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月20日 · 周五 <span class="wk-en">FRI</span>
+            </div>
+            <h2 class="day-title">勝尾寺 + 箕面瀑布 → 回新世界吃饭休息</h2>
+            <div class="chips">
+              <span class="chip">大阪</span><span class="chip">🏠 RL</span>
+            </div>
+          </div>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">07:30</div>
+            <div class="tl-body">
+              <div>🍙 <i class="m-star">★</i> <b>Breakfast in 7-Eleven</b></div>
+              <div class="tl-tags"><span class="cost">~¥1,000</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">08:45</div>
+            <div class="tl-body">
+              <div>
+                Hopetree →
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E7%AE%95%E9%9D%A2%E8%90%B1%E9%87%8E%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>箕面萱野</b><span class="pin">📍</span></a
+                >，直达，约35分钟
+              </div>
+              <div class="tl-tags"><span class="cost">¥530</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">09:35</div>
+            <div class="tl-body">
+              <div>
+                <b>阪急巴士30系统</b> → 勝尾寺，22分钟（09:00起约每20分钟一班）
+              </div>
+              <div class="tl-tags"><span class="cost">¥320</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">10:00–12:20</div>
+            <div class="tl-body">
+              <div>
+                ⛩️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%8B%9D%E5%B0%BE%E5%AF%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>勝尾寺</b><span class="pin">📍</span></a
+                >
+                — 满山红色达摩，红叶接近最佳（08:00–17:00，达摩
+                ¥2,000–5,000）。游玩完右转可打出租车（车程6分钟，¥1,300）
+              </div>
+              <div class="tl-tags"><span class="cost">¥500</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="food">
+            <span class="dot"></span>
+            <div class="tl-time">13:15–15:15</div>
+            <div class="tl-body">
+              <div>
+                🌊
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E7%AE%95%E9%9D%A2%E5%A4%A7%E6%BB%9D"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>箕面大滝</b><span class="pin">📍</span></a
+                >（路上买红叶天妇罗 ¥300–500），3.5 km 铺装河边步道（全程开放）+
+                🍚 <b>正经吃一顿午餐</b>
+              </div>
+              <div class="tl-tags"><span class="cost">~¥1,800</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">15:30</div>
+            <div class="tl-body">
+              <div>
+                走路下山到
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E7%AE%95%E9%9D%A2%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>阪急箕面站</b><span class="pin">📍</span></a
+                >（约25分钟）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">16:05</div>
+            <div class="tl-body">
+              <div>
+                <b>阪急箕面 → 石橋阪大前 → 梅田 → 御堂筋线 → 動物園前</b
+                >（约50分钟）
+              </div>
+              <div class="tl-tags"><span class="cost">~¥520</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">16:30</div>
+            <div class="tl-body">
+              <div>
+                🍢 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=Nonkiya+%E3%81%AE%E3%82%93%E3%81%8D%E3%82%84+%E9%96%A2%E6%9D%B1%E7%85%AE+%E5%A4%A7%E9%98%AA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Nonkiya 関東煮</b><span class="pin">📍</span></a
+                >（20:00 关门，需早去）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">~17:00</div>
+            <div class="tl-body"><div>回到 RL — 洗澡、休息</div></div>
+          </li>
+          <li class="tl-item" data-cat="food">
+            <span class="dot"></span>
+            <div class="tl-time">17:30</div>
+            <div class="tl-body">
+              <div>
+                🥞
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%BE%E3%81%8B%E3%82%89%E4%BA%AD+%E9%80%9A%E5%A4%A9%E9%96%A3"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>通天阁 あまから亭大阪烧 (Amakaratei)</b
+                  ><span class="pin">📍</span></a
+                >（16:00–22:00）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">18:30</div>
+            <div class="tl-body">
+              <div>
+                🏮 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B8%E3%83%A3%E3%83%B3%E6%A8%AA%E4%B8%81"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>新世界本通商店街 & ジャンジャン横丁</b
+                  ><span class="pin">📍</span></a
+                >
+                🎯 横丁里的
+                <b>スマートボール ニュースター</b>（昭和弹珠游戏店）→
+                一路走回新世界市场
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">18:40</div>
+            <div class="tl-body">
+              <div>
+                🍢 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E9%87%8D%E5%8B%9D+%E6%96%B0%E4%B8%96%E7%95%8C"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>八重勝</b><span class="pin">📍</span></a
+                >（10:30–20:30，周四休 — 今晚必吃！）/
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%85%83%E7%A5%96%E4%B8%B2%E3%81%8B%E3%81%A4+%E3%81%A0%E3%82%8B%E3%81%BE"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>元祖炸串 (Kushikatsu Daruma)</b
+                  ><span class="pin">📍</span></a
+                >（10:30–22:30）
+              </div>
+              <div class="tl-tags"><span class="cost">~¥2,500</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">19:30</div>
+            <div class="tl-body">
+              <div>
+                🍣 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E8%88%88%E5%AF%BF%E5%8F%B8+%E6%9C%AC%E5%BA%97+%E5%A4%A7%E9%98%AA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>大興寿司 本店</b><span class="pin">📍</span></a
+                >（营业到 21:00）
+              </div>
+              <div class="tl-tags"><span class="cost">~¥2,500</span></div>
+            </div>
+          </li>
+        </ol>
+        <h3 class="sub-h">🍽️ 11月20日 备选晚餐清单</h3>
+        <div class="tbl-wrap">
+          <table class="grid">
+            <thead>
+              <tr>
+                <th>店铺</th>
+                <th>吃什么</th>
+                <th>营业时间</th>
+                <th>怎么去</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  ★
+                  <a
+                    class="map"
+                    href="https://www.google.com/maps/search/?api=1&query=tempura+tarojiro+%E5%BF%83%E6%96%8E%E6%A9%8B"
+                    target="_blank"
+                    rel="noopener"
+                    ><b>天ぷら tarojiro</b><span class="pin">📍</span></a
+                  >（心斎橋）
+                </td>
+                <td>生蚝 + 天妇罗</td>
+                <td>17:00–24:00，周三休</td>
+                <td>心斎橋 下车</td>
+              </tr>
+              <tr>
+                <td>
+                  ★
+                  <a
+                    class="map"
+                    href="https://www.google.com/maps/search/?api=1&query=Yakiniku+Osaka+Nandaimon"
+                    target="_blank"
+                    rel="noopener"
+                    ><b>Yakiniku Osaka Nandaimon</b
+                    ><span class="pin">📍</span></a
+                  >（难波）
+                </td>
+                <td>和牛烤肉放题，约 RM90/人</td>
+                <td>17:00–23:30，周三休</td>
+                <td>なんば 下车</td>
+              </tr>
+              <tr>
+                <td>
+                  ★
+                  <a
+                    class="map"
+                    href="https://www.google.com/maps/search/?api=1&query=Kusaka+Curry+%E5%BF%83%E6%96%8E%E6%A9%8B"
+                    target="_blank"
+                    rel="noopener"
+                    ><b>Kusaka Curry</b><span class="pin">📍</span></a
+                  >（心斎橋）
+                </td>
+                <td>米其林推荐咖喱饭</td>
+                <td>17:30–20:30</td>
+                <td>心斎橋 下车</td>
+              </tr>
+              <tr>
+                <td>
+                  ★
+                  <a
+                    class="map"
+                    href="https://www.google.com/maps/search/?api=1&query=Oretachino-curry+Ramen+Koji+Labo+Osaka"
+                    target="_blank"
+                    rel="noopener"
+                    ><b>Oretachino-curry Ramen Koji Labo</b
+                    ><span class="pin">📍</span></a
+                  >
+                </td>
+                <td>咖喱饭 / 咖喱面</td>
+                <td>11:00–22:00</td>
+                <td>なんば 下车</td>
+              </tr>
+              <tr>
+                <td>
+                  ★
+                  <a
+                    class="map"
+                    href="https://www.google.com/maps/search/?api=1&query=%E9%B6%8FSoba%E5%BA%A7%E9%8A%80+%E8%82%A5%E5%BE%8C%E6%A9%8B"
+                    target="_blank"
+                    rel="noopener"
+                    ><b>Torisoba Zagin Niboshi</b><span class="pin">📍</span></a
+                  >
+                </td>
+                <td>浓郁鸡汤拉面</td>
+                <td>10:00–22:00</td>
+                <td>淀屋橋 下车步行7分钟</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- DAY 5 -->
+      <section
+        class="day city-osaka"
+        id="day5"
+        data-day="5"
+        data-date="2026-11-21"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">05</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月21日 · 周六 <span class="wk-en">SAT</span>
+            </div>
+            <h2 class="day-title">
+              梅田：牛太本陣 · LINKS/LUCUA · 鳗鱼串 · Grenier · きじ → 京都
+            </h2>
+            <div class="chips">
+              <span class="chip">大阪</span
+              ><span class="chip">🏠 京都伏见</span>
+            </div>
+          </div>
+        </header>
+        <p class="callout">⚠️ 三连休第一天，也是整趟旅程最难移动的一天。</p>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">08:30</div>
+            <div class="tl-body"><div>睡晚一点，收拾行李</div></div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">09:15</div>
+            <div class="tl-body">
+              <div>
+                ☕ <i class="m-star">★</i> <b>新世界早午餐</b>：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E6%88%90%E5%B1%8B%E7%8F%88%E7%90%B2+%E6%96%B0%E4%B8%96%E7%95%8C"
+                  target="_blank"
+                  rel="noopener"
+                  >千成屋珈琲<span class="pin">📍</span></a
+                >
+                或
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%96%AB%E8%8C%B6%E9%80%9A%E5%A4%A9%E9%96%A3"
+                  target="_blank"
+                  rel="noopener"
+                  >喫茶通天閣<span class="pin">📍</span></a
+                >
+              </div>
+              <div class="tl-tags"><span class="cost">~¥800</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">10:00</div>
+            <div class="tl-body"><div>退房，行李带着走</div></div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">10:15</div>
+            <div class="tl-body">
+              <div><b>JR 新今宮 → 环状线 → 大阪站</b>（约15分钟）</div>
+              <div class="tl-tags"><span class="cost">¥190</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">10:30</div>
+            <div class="tl-body">
+              <div>
+                🧳 行李寄放
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=JR%E5%A4%A7%E9%98%AA%E9%A7%85+%E4%B8%AD%E5%A4%AE%E5%8F%A3+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>JR大阪站 中央口投币储物柜室</b
+                  ><span class="pin">📍</span></a
+                >（售票处旁，约160个大号柜）— 大号 ¥700，可刷 ICOCA，开到 24:40
+              </div>
+              <div class="tl-tags"><span class="cost">大号 ¥700</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">11:00–12:00</div>
+            <div class="tl-body">
+              <div>
+                🍢 <i class="m-star">★</i> 午餐：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E5%A4%AA%E6%9C%AC%E9%99%A3+%E3%83%A8%E3%83%89%E3%83%90%E3%82%B7%E6%A2%85%E7%94%B0"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>牛太本陣 umeda</b><span class="pin">📍</span></a
+                >（友都八喜梅田）
+              </div>
+              <div class="tl-tags"><span class="cost">~¥2,000 / 人</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">12:10–14:00</div>
+            <div class="tl-body">
+              <div>
+                🛍️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=LINKS+UMEDA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>友都八喜梅田 & LINKS UMEDA</b
+                  ><span class="pin">📍</span></a
+                >（B1～8F 约200间店铺）：UNIQLO 1F
+                西日本最大旗舰店、3COINS、DAISO、GU、B1 美味横丁 & 大型超市
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">14:30–16:00</div>
+            <div class="tl-body">
+              <div>
+                🛍️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=LUCUA+osaka"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>LUCUA / LUCUA 1100</b><span class="pin">📍</span></a
+                >
+                — 从 9F 往下逛（蔦屋書店 9F、Loft 9F、吉卜力 8F、MUJI/3COINS
+                8F、Sanrio 6F、POP MART 4F）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">16:00</div>
+            <div class="tl-body">
+              <div>
+                🎮 （可选）<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=Nintendo+OSAKA+%E3%83%AB%E3%82%AF%E3%82%A2%E3%82%B5%E3%82%A6%E3%82%B9"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Pokémon Center Osaka + Nintendo OSAKA</b
+                  ><span class="pin">📍</span></a
+                >
+                — LUCUA SOUTH 13F
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">17:00</div>
+            <div class="tl-body">
+              <div>
+                🐟 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%AA%E3%81%8E%E4%B8%B2%E7%84%BC%E3%81%8D+%E3%81%84%E3%81%A5%E3%82%82+%E3%83%AB%E3%82%AF%E3%82%A2%E5%A4%A7%E9%98%AA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>うなぎ串焼き いづも</b><span class="pin">📍</span></a
+                >（LUCUA osaka B2F）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">17:50</div>
+            <div class="tl-body">
+              <div>
+                🥐 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=grenier+%E6%A2%85%E7%94%B0%E5%BA%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Grenier（グルニエ）梅田店</b
+                  ><span class="pin">📍</span></a
+                >
+                — 阪急グランドビル 1F（10:00–20:00，外带专门店）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">18:30</div>
+            <div class="tl-body">
+              <div>
+                🥞 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC+%E3%81%8D%E3%81%98+%E6%9C%AC%E5%BA%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>お好み焼 きじ 本店</b><span class="pin">📍</span></a
+                >（新梅田食道街1F，只收现金，23个座位）⚠️
+                <b>Hanadako（章鱼烧）</b>
+              </div>
+              <div class="tl-tags"><span class="cost">~¥1,500</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">19:40</div>
+            <div class="tl-body">
+              <div>
+                从新梅田食道街步行约8分钟回 JR大阪站 中央口 → 19:50 取行李
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">20:00</div>
+            <div class="tl-body">
+              <div>
+                <b>大阪站 → Kyoto Station (Tokaido Line)</b> → ~21:00
+                <b>Kyoto Station → Fushimi Station (Kintetsu-Kyoto Line)</b> →
+                ~21:20 到伏见入住休息
+              </div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- DAY 6 -->
+      <section
+        class="day city-nara"
+        id="day6"
+        data-day="6"
+        data-date="2026-11-22"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">06</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月22日 · 周日 <span class="wk-en">SUN</span>
+            </div>
+            <h2 class="day-title">
+              <i class="m-star">★</i> 宇治（上午）→ 奈良（约13:30起）
+            </h2>
+            <div class="chips">
+              <span class="chip">宇治 · 奈良</span
+              ><span class="chip">🏠 伏见</span>
+            </div>
+          </div>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">07:00</div>
+            <div class="tl-body">
+              <div>
+                京阪 伏见桃山 →
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%98%AA%E5%AE%87%E6%B2%BB%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>京阪宇治</b><span class="pin">📍</span></a
+                >（约45分钟）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">07:50</div>
+            <div class="tl-body">
+              <div>
+                🌉 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%AE%87%E6%B2%BB%E5%85%AC%E5%9C%92+%E5%A1%94%E3%81%AE%E5%B3%B6"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>朝雾桥 → 宇治公园（塔之岛・中之岛）</b
+                  ><span class="pin">📍</span></a
+                >
+                — 宇治最漂亮的水景
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">08:45</div>
+            <div class="tl-body">
+              <div>
+                ⛩️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E7%AD%89%E9%99%A2"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>平等院</b><span class="pin">📍</span></a
+                >
+                — 庭园 8:45–17:30（¥700），包含凤翔馆博物馆 9:00–17:00
+              </div>
+              <div class="tl-tags"><span class="cost">¥700</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="food">
+            <span class="dot"></span>
+            <div class="tl-time">10:00</div>
+            <div class="tl-body">
+              <div>
+                🍁
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E6%9D%91%E8%97%A4%E5%90%89%E6%9C%AC%E5%BA%97+%E5%AE%87%E6%B2%BB"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>中村藤吉 本店 まるとパフェ</b
+                  ><span class="pin">📍</span></a
+                >
+                拿号码 +
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E7%AD%89%E9%99%A2%E8%A1%A8%E5%8F%82%E9%81%93"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>平等院表参道 & 宇治橋通商店街</b
+                  ><span class="pin">📍</span></a
+                >
+                逛街
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">11:00</div>
+            <div class="tl-body">
+              <div>
+                🍁 吃 <b>中村藤吉 本店</b> /
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E4%BC%8A%E8%97%A4%E4%B9%85%E5%8F%B3%E8%A1%9B%E9%96%80+%E5%B9%B3%E7%AD%89%E9%99%A2%E5%BA%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>伊藤久右衛門</b><span class="pin">📍</span></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">12:30</div>
+            <div class="tl-body">
+              <div><b>JR 宇治 → JR 奈良</b>（みやこ路快速，约60分钟）</div>
+              <div class="tl-tags"><span class="cost">¥510</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">13:30</div>
+            <div class="tl-body">
+              <div>JR 奈良 → 巴士到 <b>氷室神社・国立博物館</b>（约8分钟）</div>
+              <div class="tl-tags"><span class="cost">¥250</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">13:40</div>
+            <div class="tl-body">
+              <div>
+                🦌 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%A5%88%E8%89%AF%E5%85%AC%E5%9C%92"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>奈良公园（吉城川）</b><span class="pin">📍</span></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">14:30–15:20</div>
+            <div class="tl-body">
+              <div>
+                🏯 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E5%A4%A7%E5%AF%BA+%E5%A4%A7%E4%BB%8F%E6%AE%BF"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>東大寺 大仏殿</b><span class="pin">📍</span></a
+                >（11月 8:00–17:00，只收现金）
+              </div>
+              <div class="tl-tags"><span class="cost">¥800</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">15:25–16:00</div>
+            <div class="tl-body">
+              <div>
+                <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E5%A4%A7%E5%AF%BA+%E4%BA%8C%E6%9C%88%E5%A0%82"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>二月堂平台</b><span class="pin">📍</span></a
+                >（免费视野）· 大佛殿 · 大佛池 · 银杏树
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">16:00–16:50</div>
+            <div class="tl-body">
+              <div>
+                🦌 <i class="m-star">★</i> <b>手向山八幡宫</b> ★
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E8%8B%A5%E8%8D%89%E5%B1%B1"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>若草山麓看日落</b><span class="pin">📍</span></a
+                >（约16:48）
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">17:15</div>
+            <div class="tl-body">
+              <div>经 荒池 → 猿沢池 → 三条通 走到商店街（约15分钟）</div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">17:35–18:35</div>
+            <div class="tl-body">
+              <div>
+                🛍️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E5%90%91%E5%95%86%E5%BA%97%E8%A1%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>東向商店街</b><span class="pin">📍</span></a
+                >
+                — ⚠️
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E8%B0%B7%E5%A0%82+%E5%A5%88%E8%89%AF"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>中谷堂</b><span class="pin">📍</span></a
+                >
+                18:00 关（先看高速捣麻糬 ¥200）→ 千代の舎竹村
+              </div>
+              <div class="tl-tags"><span class="cost">¥200起</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">18:35–19:45</div>
+            <div class="tl-body">
+              <div>
+                🍜 <i class="m-star">★</i> 晚餐：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%87%9C%E7%B2%8B+%E5%A5%88%E8%89%AF+%E3%81%86%E3%81%A9%E3%82%93"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>釜粋 kamaiki</b><span class="pin">📍</span></a
+                >（奈良乌冬，17:00–21:00）
+              </div>
+              <div class="tl-tags"><span class="cost">~¥1,500</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">19:55</div>
+            <div class="tl-body">
+              <div>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E8%BF%91%E9%89%84%E5%A5%88%E8%89%AF%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>近铁奈良 → Fushimi Station</b
+                  ><span class="pin">📍</span></a
+                >（直达，约51分钟）→ ~20:35 回到伏见
+              </div>
+              <div class="tl-tags"><span class="cost">¥680</span></div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- DAY 7 -->
+      <section
+        class="day city-kyoto"
+        id="day7"
+        data-day="7"
+        data-date="2026-11-23"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">07</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月23日 · 周一 <span class="wk-en">MON</span>
+              <span class="hol">🎌 公众假期</span>
+            </div>
+            <h2 class="day-title">
+              南禅寺 → 永観堂 → 锦市场 → 北野天満宮 → 金閣寺 → 河原町
+            </h2>
+            <div class="chips">
+              <span class="chip">京都</span><span class="chip">🏠 伏见</span>
+            </div>
+          </div>
+        </header>
+        <p class="callout">
+          ⚠️ 公众假期全年最挤，早出门，能坐地铁/电车就不坐巴士。
+        </p>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">07:50</div>
+            <div class="tl-body">
+              <div>
+                京阪 → 三条 → 东西线地铁 →
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E8%B9%B4%E4%B8%8A%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>蹴上</b><span class="pin">📍</span></a
+                >
+              </div>
+              <div class="tl-tags"><span class="cost">~¥500</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">08:15</div>
+            <div class="tl-body">
+              <div>
+                ☕
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=Blue+Bottle+Coffee+%E4%BA%AC%E9%83%BD%E3%82%AB%E3%83%95%E3%82%A7"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Blue Bottle Coffee 京都カフェ</b
+                  ><span class="pin">📍</span></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">08:30</div>
+            <div class="tl-body">
+              <div>
+                1️⃣
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E7%A6%85%E5%AF%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>南禅寺</b><span class="pin">📍</span></a
+                >
+                — 红砖水路阁免费（付费区 08:40 开放）
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">10:00</div>
+            <div class="tl-body">
+              <div>
+                2️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%B0%B8%E8%A6%B3%E5%A0%82+%E7%A6%85%E6%9E%97%E5%AF%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>永観堂</b><span class="pin">📍</span></a
+                >（09:00开门，秋季特别参观）
+              </div>
+              <div class="tl-tags"><span class="cost">¥1,500</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">11:05</div>
+            <div class="tl-body">
+              <div>
+                东西线地铁 蹴上 → <b>京都市役所前</b>（或走哲学の道 & 銀閣寺）
+              </div>
+              <div class="tl-tags"><span class="cost">¥260</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">11:30</div>
+            <div class="tl-body">
+              <div>
+                🐖 <i class="m-star">★</i> 午餐：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%90%8D%E4%BB%A3%E3%81%A8%E3%82%93%E3%81%8B%E3%81%A4+%E3%81%8B%E3%81%A4%E3%81%8F%E3%82%89+%E4%B8%89%E6%9D%A1%E6%9C%AC%E5%BA%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>名代とんかつ かつくら 三条本店</b
+                  ><span class="pin">📍</span></a
+                >（11:00–20:30）
+              </div>
+              <div class="tl-tags"><span class="cost">~¥1,800</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">12:30</div>
+            <div class="tl-body">
+              <div>
+                🍙 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=onimaru+%E4%BA%AC%E9%83%BD"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>onimaru 饭团</b><span class="pin">📍</span></a
+                >（10:00–21:00）
+              </div>
+              <div class="tl-tags"><span class="cost">~¥500</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">13:05</div>
+            <div class="tl-body">
+              <div>
+                🍢 Optional ★
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%8C%A6%E5%B8%82%E5%A0%B4"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>錦市場</b><span class="pin">📍</span></a
+                >
+                小吃巡礼（⚠️ 禁止边走边吃）
+              </div>
+              <div class="tl-tags">
+                <span class="cost">~¥2,000 / 两人</span>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">13:50</div>
+            <div class="tl-body">
+              <div>
+                Shijo Kawaramachi 巴士 → Kitano Tenmangu-mae（约37分钟）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">14:40–15:20</div>
+            <div class="tl-body">
+              <div>
+                5️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E9%87%8E%E5%A4%A9%E6%BA%80%E5%AE%AE"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>北野天満宮</b><span class="pin">📍</span></a
+                >（07:00–17:00）
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">15:30</div>
+            <div class="tl-body">
+              <div>Sky Hop Bus Red Line → 金阁寺道（或步行20分钟）</div>
+              <div class="tl-tags"><span class="cost">¥230</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">15:45–16:45</div>
+            <div class="tl-body">
+              <div>
+                6️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E9%96%A3%E5%AF%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>金閣寺</b><span class="pin">📍</span></a
+                >（09:00–17:00，无夜间点灯）
+              </div>
+              <div class="tl-tags"><span class="cost">¥500</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">17:00–17:30</div>
+            <div class="tl-body">
+              <div>59路市巴士：Kinkakuji-michi → Kawaramachi Sanjo</div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">18:00</div>
+            <div class="tl-body">
+              <div>
+                🛍️
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=UNIQLO+KYOTO+%E3%83%9F%E3%83%BC%E3%83%8A%E4%BA%AC%E9%83%BD"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>UNIQLO KYOTO（ミーナ京都 B1–3F）</b
+                  ><span class="pin">📍</span></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">19:30</div>
+            <div class="tl-body">
+              <div>
+                🍢 烧鸟：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=Akiyoshi+Kawaramachiten+Kyoto"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Akiyoshi Kawaramachiten</b><span class="pin">📍</span></a
+                >
+                / The Old Man's Best Swing Kawaramachi Sanjo
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">21:00</div>
+            <div class="tl-body">
+              <div>
+                Kawaramachi Sanjo → Tambabashi → Kintetsu-Tambabashi → Fushimi
+                Station
+              </div>
+              <div class="tl-tags"><span class="cost">~¥540</span></div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- DAY 8 -->
+      <section
+        class="day city-kyoto"
+        id="day8"
+        data-day="8"
+        data-date="2026-11-24"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">08</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月24日 · 周二 <span class="wk-en">TUE</span>
+            </div>
+            <h2 class="day-title">
+              <i class="m-star">★</i> 嵯峨野小火车 → 嵐山 → 京都永旺 →
+              炸牛排/寿司
+            </h2>
+            <div class="chips">
+              <span class="chip">京都</span><span class="chip">🏠 伏见</span>
+            </div>
+          </div>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">07:45</div>
+            <div class="tl-body">
+              <div>
+                Fushimi ward → Kyoto Station →
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%A6%AC%E5%A0%80%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Umahori Station</b><span class="pin">📍</span></a
+                >（59分钟）→ 步行10分钟到 Torokko Kameoka
+              </div>
+              <div class="tl-tags"><span class="cost">¥650</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick transit">
+            <span class="dot"></span>
+            <div class="tl-time">09:30</div>
+            <div class="tl-body">
+              <div>
+                🚃 <i class="m-star">★</i>
+                <b>嵯峨野观光小火车，龟冈 → 岚山</b>（5号车厢开放式）
+              </div>
+              <div class="tl-tags"><span class="cost">¥880</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">10:30</div>
+            <div class="tl-body">
+              <div>
+                5️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%B8%B8%E5%AF%82%E5%85%89%E5%AF%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>常寂光寺</b><span class="pin">📍</span></a
+                >（9:00–17:00）
+              </div>
+              <div class="tl-tags"><span class="cost">¥600</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">11:30</div>
+            <div class="tl-body">
+              <div>
+                6️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%BE%A1%E9%AB%AA%E7%A5%9E%E7%A4%BE"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>御髪神社</b><span class="pin">📍</span></a
+                >（免费）→ 12:00 7️⃣
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E7%AB%B9%E6%9E%97%E3%81%AE%E5%B0%8F%E5%BE%84"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>竹林の小径</b><span class="pin">📍</span></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">12:40</div>
+            <div class="tl-body">
+              <div>
+                8️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%B5%90%E5%B1%B1%E5%95%86%E5%BA%97%E8%A1%97"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>嵐山商店街</b><span class="pin">📍</span></a
+                >：嵯峨野可乐饼 · 京都金之華 · mamemono 鯛魚燒 ·
+                嵐山よしむら荞麦面
+              </div>
+              <div class="tl-tags"><span class="cost">&lt;¥1,000</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">14:00</div>
+            <div class="tl-body">
+              <div>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=Hogon-in+Temple+Kyoto"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Hogon-in Temple（宝厳院）</b
+                  ><span class="pin">📍</span></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">14:30</div>
+            <div class="tl-body">
+              <div>
+                9️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E9%BE%8D%E5%AF%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>天龍寺 曹源池庭园</b><span class="pin">📍</span></a
+                >（最后入场 16:50）
+              </div>
+              <div class="tl-tags"><span class="cost">¥500</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">16:15–16:50</div>
+            <div class="tl-body">
+              <div>
+                🔟 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%B8%A1%E6%9C%88%E6%A9%8B"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>渡月橋 看日落</b><span class="pin">📍</span></a
+                >（约16:48）
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">17:10</div>
+            <div class="tl-body">
+              <div>JR 嵯峨岚山 → 京都站</div>
+              <div class="tl-tags"><span class="cost">¥240</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">17:40</div>
+            <div class="tl-body">
+              <div>
+                ⭐
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E4%BA%AC%E9%83%BD"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>AEON MALL KYOTO 京都永旺</b><span class="pin">📍</span></a
+                >
+                — 永旺宠物用品店 petemo
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">19:00–20:00</div>
+            <div class="tl-body">
+              <div>
+                🏮 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=GYUKATSU+Kyoto+Katsugyu+Kyoto+Yodobashi"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>GYUKATSU Kyoto Katsugyu (Kyoto Yodobashi)</b
+                  ><span class="pin">📍</span></a
+                >
+                /
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=sushi+no+musashi+Kyoto+Station"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>sushi no musashi</b><span class="pin">📍</span></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">~20:00</div>
+            <div class="tl-body"><div>Kyoto station back to hopetree</div></div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- DAY 9 -->
+      <section
+        class="day city-kyoto"
+        id="day9"
+        data-day="9"
+        data-date="2026-11-25"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">09</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月25日 · 周三 <span class="wk-en">WED</span>
+            </div>
+            <h2 class="day-title">
+              <i class="m-star">★</i> 平等寺 → 清水寺 → 三年坂/二年坂 → 祇園 →
+              鯛壽司 → 河原町
+            </h2>
+            <div class="chips">
+              <span class="chip">京都</span
+              ><span class="chip">🏠 伏见（续住一晚，不用带行李）</span>
+            </div>
+          </div>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">08:00</div>
+            <div class="tl-body">
+              <div>京阪 伏见桃山 → 祇园四条（或乌丸线地铁到四条）</div>
+              <div class="tl-tags"><span class="cost">~¥320</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">08:30–09:00</div>
+            <div class="tl-body">
+              <div>
+                🙏 <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%9B%A0%E5%B9%A1%E5%A0%82+%E5%B9%B3%E7%AD%89%E5%AF%BA+%E4%BA%AC%E9%83%BD"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>平等寺（因幡堂）</b><span class="pin">📍</span></a
+                >
+                — 免费，防癌祈愿闻名
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">09:30</div>
+            <div class="tl-body">
+              <div>河原町松原 巴士 → 五条坂 → 步行经清水坂到清水寺</div>
+              <div class="tl-tags"><span class="cost">~¥230</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">10:20–11:30</div>
+            <div class="tl-body">
+              <div>
+                ⛩️
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%B8%85%E6%B0%B4%E5%AF%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>清水寺</b><span class="pin">📍</span></a
+                >（地主神社整修关闭中）
+              </div>
+              <div class="tl-tags"><span class="cost">¥500</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">11:40</div>
+            <div class="tl-body">
+              <div>
+                1️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E4%B8%89%E5%B9%B4%E5%9D%82"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>三年坂</b><span class="pin">📍</span></a
+                >
+                → 2️⃣
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E4%BA%8C%E5%B9%B4%E5%9D%82"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>二年坂</b><span class="pin">📍</span></a
+                >
+                + かさぎ屋 + Mochi mochi
+              </div>
+              <div class="tl-tags"><span class="cost">~¥800</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">13:00–14:00</div>
+            <div class="tl-body">
+              <div>
+                🍲 <i class="m-star">★</i> 午餐：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=ichiren+KYOTO"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>ichiren KYOTO</b><span class="pin">📍</span></a
+                >
+                + 八坂之塔 + 庚申堂
+              </div>
+              <div class="tl-tags"><span class="cost">~¥1,500</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">14:30</div>
+            <div class="tl-body">
+              <div>
+                Optional：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%BB%BA%E4%BB%81%E5%AF%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>建仁寺</b><span class="pin">📍</span></a
+                >（双龙天井画，最后入场16:30）
+              </div>
+              <div class="tl-tags"><span class="cost">¥800</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">16:00–18:00</div>
+            <div class="tl-body">
+              <div>
+                3️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E5%9D%82%E7%A5%9E%E7%A4%BE"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>八坂神社</b><span class="pin">📍</span></a
+                >
+                → 祇园 → 花見小路 → 四条大桥 → 鸭川 → 三条大桥（可选 先斗町）
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">18:30–19:30</div>
+            <div class="tl-body">
+              <div>
+                🍣 <i class="m-star">★</i> 晚餐：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E9%AF%9B%E5%A3%BD%E5%8F%B8+%E4%BA%AC%E9%83%BD+%E5%9B%9B%E6%9D%A1%E6%B2%B3%E5%8E%9F%E7%94%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>鯛壽司（Tai Sushi）</b><span class="pin">📍</span></a
+                >
+                — 17个吧台座位，坐下先说预算（☎ 075-221-6598 订位）
+              </div>
+              <div class="tl-tags"><span class="cost">先问价</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">19:30</div>
+            <div class="tl-body">
+              <div>
+                4️⃣ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9B%E6%9D%A1%E6%B2%B3%E5%8E%9F%E7%94%BA"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>四条河原町 购物</b><span class="pin">📍</span></a
+                >（Uniqlo、GU、Daiso 约21:00关）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">21:00</div>
+            <div class="tl-body">
+              <div>京阪祇园四条 → 伏见桃山（约15分钟）→ ~21:25 回住处休息</div>
+              <div class="tl-tags"><span class="cost">¥320</span></div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- DAY 10 -->
+      <section
+        class="day city-depart"
+        id="day10"
+        data-day="10"
+        data-date="2026-11-26"
+      >
+        <header class="day-head">
+          <div class="day-num">
+            <span class="lbl">DAY</span><span class="n">10</span>
+          </div>
+          <div class="day-meta">
+            <div class="day-date">
+              11月26日 · 周四 <span class="wk-en">THU</span>
+            </div>
+            <h2 class="day-title">
+              <i class="m-star">★</i> 伏见稻荷 → 京都站 → ~15:00 Haruka →
+              关西机场
+            </h2>
+            <div class="chips"><span class="chip">京都 → 回程</span></div>
+          </div>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">07:00</div>
+            <div class="tl-body">
+              <div>京阪 伏見桃山 → 伏見稲荷（3站，约8分钟）</div>
+              <div class="tl-tags"><span class="cost">¥160</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick">
+            <span class="dot"></span>
+            <div class="tl-time">07:15–09:45</div>
+            <div class="tl-body">
+              <div>
+                ⛩️ <i class="m-star">★</i>
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E4%BC%8F%E8%A6%8B%E7%A8%B2%E8%8D%B7%E5%A4%A7%E7%A4%BE"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>伏見稲荷大社</b><span class="pin">📍</span></a
+                >
+                — 08:30前人少。千本鸟居 → 四ツ辻（看市景）
+              </div>
+              <div class="tl-tags"><span class="cost">免费</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="food">
+            <span class="dot"></span>
+            <div class="tl-time">09:45</div>
+            <div class="tl-body">
+              <div>🍵 参道上吃点小吃（稻荷寿司、狐狸乌冬）</div>
+              <div class="tl-tags"><span class="cost">~¥800</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">10:30</div>
+            <div class="tl-body">
+              <div>回伏见住处 — 洗澡、收行李、<b>退房</b></div>
+              <div class="tl-tags"><span class="cost">¥160</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">11:30</div>
+            <div class="tl-body">
+              <div>
+                JR 桃山 →
+                <a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%83%BD%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>京都站</b><span class="pin">📍</span></a
+                >（约12分钟），行李放储物柜或随身带
+              </div>
+              <div class="tl-tags"><span class="cost">~¥200</span></div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick food">
+            <span class="dot"></span>
+            <div class="tl-time">12:00</div>
+            <div class="tl-body">
+              <div>
+                🍤 <i class="m-star">★</i> 最后一顿午餐：<a
+                  class="map"
+                  href="https://www.google.com/maps/search/?api=1&query=tempura+tententen+%E4%BA%AC%E9%83%BD%E9%A7%85"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>京都 tempura tententen</b><span class="pin">📍</span></a
+                >（备选：🏆 貝だし麺 きた田）
+              </div>
+              <div class="tl-tags"><span class="cost">~¥2,000</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="all">
+            <span class="dot"></span>
+            <div class="tl-time">13:00</div>
+            <div class="tl-body">
+              <div>
+                🎁 最后购物：京都伊势丹地下美食街（B1/B2）+ Malebranche
+                茶の菓（12片 ¥2,280）
+              </div>
+            </div>
+          </li>
+          <li class="tl-item pick" data-cat="pick transit">
+            <span class="dot"></span>
+            <div class="tl-time">~15:00</div>
+            <div class="tl-body">
+              <div>
+                🚄 <i class="m-star">★</i>
+                <b>JR Haruka 特急，京都 → 关西机场</b>（约75–80分钟，HARUKA
+                单程票 ¥2,200，乘车出示护照）
+              </div>
+              <div class="tl-tags"><span class="cost">¥2,200</span></div>
+            </div>
+          </li>
+          <li class="tl-item" data-cat="transit">
+            <span class="dot"></span>
+            <div class="tl-time">~16:20</div>
+            <div class="tl-body">
+              <div>
+                到关西机场。💴
+                <b>先办退税，再托运行李</b
+                >（2026年11月1日新制：出发大厅安检前自助机扫护照，多留45–60分钟）
+              </div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- BOOKINGS -->
+      <section class="extra" id="bookings">
+        <h2 class="sec-h">
+          ✅ 预约清单
+          <small id="bkProgress">已完成 0 / 16 项（保存在本机）</small>
+        </h2>
+        <ul class="checklist">
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk0" /><span class="box"></span
+              ><span class="when">现在</span
+              ><span class="what"
+                >生日涮涮锅 心斎橋駅前店，11月18日 20:00 — 直接预约</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk1" /><span class="box"></span
+              ><span class="when">现在</span
+              ><span class="what"
+                >取消 かに蔵 梅田 11月18日 20:30（如果已订）</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk2" /><span class="box"></span
+              ><span class="when">现在</span
+              ><span class="what"
+                >USJ 1日影城门票 ×2，11月19日（官网 / App）</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk3" /><span class="box"></span
+              ><span class="when">现在</span
+              ><span class="what"
+                >伏见住处续住到11月25日晚；取消新今宫的住处；确认11月26日退房时间</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk11" /><span class="box"></span
+              ><span class="when">现在</span
+              ><span class="what"
+                ><b>Crosta Osaka</b> 行李寄放，11月21日 10:50，2件 —
+                handsfree-japan.com/osaka</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bkfood1" /><span
+                class="box"
+              ></span
+              ><span class="when">现在</span
+              ><span class="what"
+                ><b>うなぎ串焼き いづも</b>，11月21日 11:00，2位 —
+                TableCheck</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bkfood2" /><span
+                class="box"
+              ></span
+              ><span class="when">出发前</span
+              ><span class="what"
+                ><b>鯛壽司</b>，11月25日 19:00，2位 — ☎ 075-221-6598</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk4" /><span class="box"></span
+              ><span class="when">一开放就订</span
+              ><span class="what"
+                >（可选）通天阁定时入场，11月20日（周五）晚上</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk12" /><span class="box"></span
+              ><span class="when">10月22日前</span
+              ><span class="what"
+                ><b>NAKED meets 二条城 2026</b> 夜场票 ×2，11月23日</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk13" /><span class="box"></span
+              ><span class="when">出发前</span
+              ><span class="what"
+                >打电话问 <b>キッチンパパ</b> 11月23日开不开 ☎
+                075-441-4119</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk5" /><span class="box"></span
+              ><span class="when">11月18日前</span
+              ><span class="what">（可选）大阪城天守阁网上门票 ×2</span></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk6" /><span class="box"></span
+              ><span class="when">11月7日 10:00</span
+              ><span class="what"
+                >京阪 Premium Car，11月21日 约20:15 淀屋桥 → 丹波桥</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk7" /><span class="box"></span
+              ><span class="when">11月初 🔁</span
+              ><span class="what"
+                >胜尾寺平日巴士 · USJ 圣诞活动时间 · 平等院内部参观规则</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk8" /><span class="box"></span
+              ><span class="when">10月24日 00:00</span
+              ><span class="what"
+                ><b>嵯峨野观光小火车</b>，11月24日 09:30，5号车厢 —
+                ars-saganokanko.triplabo.jp</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk9" /><span class="box"></span
+              ><span class="when">出发前</span
+              ><span class="what"
+                ><b>HARUKA 单程票</b> ×2，京都 → 关西机场（¥2,200）</span
+              ></label
+            >
+          </li>
+          <li class="check">
+            <label
+              ><input type="checkbox" data-key="bk10" /><span class="box"></span
+              ><span class="when">回国前</span
+              ><span class="what"
+                >在 <b>Visit Japan Web</b> 登记购物记录以办免税退税</span
+              ></label
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- CLOSED -->
+      <section class="extra" id="closed">
+        <h2 class="sec-h">❌ 已关闭 / 有变动 — 别踩坑</h2>
+        <div class="closed-grid">
+          <div class="closed">
+            <div class="c-name">奥丹 南禅寺店</div>
+            <div class="c-st">长期臨時休業 → 改去 奥丹 清水（周四休）</div>
+          </div>
+          <div class="closed">
+            <div class="c-name">清水寺 地主神社</div>
+            <div class="c-st">维修关闭至约2027–28年（清水寺本身开放）</div>
+          </div>
+          <div class="closed">
+            <div class="c-name">松葉 鲱鱼荞麦面</div>
+            <div class="c-st">周三休</div>
+          </div>
+          <div class="closed">
+            <div class="c-name">鍵善良房</div>
+            <div class="c-st">11月24日休，11月25日营业</div>
+          </div>
+          <div class="closed">
+            <div class="c-name">八重勝</div>
+            <div class="c-st">
+              20:30关门，周四休 — 已安排在11月20日（周五）晚餐
+            </div>
+          </div>
+          <div class="closed">
+            <div class="c-name">关西周游卡 / JR 关西地区周游券</div>
+            <div class="c-st">均已停售 — 全程用 ICOCA</div>
+          </div>
+          <div class="closed">
+            <div class="c-name">興福寺 五重塔</div>
+            <div class="c-st">搭着脚手架，至2034年</div>
+          </div>
+          <div class="closed">
+            <div class="c-name">桒藤（錦市場）</div>
+            <div class="c-st">已闭店（官网标「閉店」）</div>
+          </div>
+          <div class="closed">
+            <div class="c-name">船岡温泉</div>
+            <div class="c-st">10月9日已取消</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHRASEBOOK -->
+      <section class="extra" id="phrases">
+        <h2 class="sec-h">
+          🗣️ 旅行常用日语 <small>点餐/结账直接给店员看</small>
+        </h2>
+        <div class="phrase-grid">
+          <div class="phrase">
+            <div class="p-jp">塩を少なめにしてください</div>
+            <div class="p-zh">
+              请少放盐（Shio wo sukuname ni shite kudasai）
+            </div>
+          </div>
+          <div class="phrase">
+            <div class="p-jp">おまかせで一人 ¥5,000 くらいで</div>
+            <div class="p-zh">每人约 ¥5,000 的主厨推荐（鯛壽司点餐用）</div>
+          </div>
+          <div class="phrase">
+            <div class="p-jp">お会計お願いします</div>
+            <div class="p-zh">麻烦买单（Okaikei onegaishimasu）</div>
+          </div>
+          <div class="phrase">
+            <div class="p-jp">免税できますか？</div>
+            <div class="p-zh">可以免税吗？（Menzei dekimasu ka?）</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="src">
+        <em
+          >Sources: kuromon.com, tabelog.com/en, award.tabelog.com/hyakumeiten,
+          eikando.or.jp, ja.kyoto.travel, sagano-kanko.co.jp, westjr.co.jp,
+          kenninji.jp, kagizen.co.jp, kitanotenmangu.or.jp, tenryuji.com,
+          byodoin.or.jp, tokichi.jp, mino-park.jp, nankai.co.jp,
+          kuronekoyamato.co.jp, ecbo.io.</em
+        >
+      </footer>
+    </main>
+
+    <div class="mob-bar">
+      <button id="todayBtn" class="today-pill" hidden>📍 今天</button>
+      <a href="#overview">📅 总览</a>
+      <a href="#bookings">✅ 预约</a>
+      <a href="#closed">⚠️ 避坑</a>
+      <button id="topBtn">↑ 顶部</button>
+    </div>
+
+    <script>
+      (() => {
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* ---------- countdown + today ---------- */
+        const start = new Date(2026, 10, 17),
+          end = new Date(2026, 10, 26);
+        const now = new Date();
+        const today = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate(),
+        );
+        const days = Math.round((start - today) / 864e5);
+        const el = document.getElementById("count");
+        if (days > 0)
+          el.innerHTML = `距离出发还有 <span class="big">${days}</span> 天`;
+        else if (today <= end) {
+          const n = Math.round((today - start) / 864e5) + 1;
+          el.innerHTML = `旅途中 · 今天是 <span class="big">第${n}天</span>`;
+          const sec = document.getElementById("day" + n);
+          if (sec) {
+            sec.classList.add("today");
+            const b = document.getElementById("todayBtn");
+            b.hidden = false;
+            b.onclick = () => sec.scrollIntoView({ behavior: "smooth" });
+          }
+        } else el.innerHTML = `旅途愉快 · 回忆满满 🍁`;
+
+        /* ---------- active day in nav ---------- */
+        const links = [...document.querySelectorAll(".daynav a")];
+        const navIn = document.querySelector(".daynav-in");
+        const setActive = (id) =>
+          links.forEach((a) => {
+            const on = a.getAttribute("href") === "#" + id;
+            a.classList.toggle("active", on);
+            if (on)
+              navIn.scrollTo({
+                left: a.offsetLeft - (navIn.clientWidth - a.offsetWidth) / 2,
+                behavior: reduce ? "auto" : "smooth",
+              });
+          });
+        const so = new IntersectionObserver(
+          (es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+          { rootMargin: "-35% 0px -60% 0px" },
+        );
+        document.querySelectorAll("section[id]").forEach((s) => so.observe(s));
+
+        /* ---------- filter bar ---------- */
+        const fBtns = [...document.querySelectorAll(".f-btn")];
+        const tlItems = [...document.querySelectorAll(".tl-item")];
+        fBtns.forEach((btn) => {
+          btn.onclick = () => {
+            fBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            const f = btn.dataset.filter;
+            tlItems.forEach((item) => {
+              if (f === "all") item.classList.remove("hidden-by-filter");
+              else {
+                const cats = (item.dataset.cat || "").split(" ");
+                item.classList.toggle("hidden-by-filter", !cats.includes(f));
+              }
+            });
+          };
+        });
+
+        /* ---------- back to top ---------- */
+        document.getElementById("topBtn").onclick = () =>
+          scrollTo({ top: 0, behavior: "smooth" });
+
+        /* ---------- booking checklist persistence + progress ---------- */
+        const cbs = [...document.querySelectorAll(".check input")];
+        const prog = document.getElementById("bkProgress");
+        const updateProg = () => {
+          const done = cbs.filter((c) => c.checked).length;
+          prog.textContent = `已完成 ${done} / ${cbs.length} 项（保存在本机）`;
+        };
+        cbs.forEach((cb) => {
+          const k = "kansai2026:" + cb.dataset.key;
+          try {
+            cb.checked = localStorage.getItem(k) === "1";
+          } catch (e) {}
+          cb.onchange = () => {
+            try {
+              localStorage.setItem(k, cb.checked ? "1" : "0");
+            } catch (e) {}
+            updateProg();
+          };
+        });
+        updateProg();
+
+        /* ---------- falling maple & ginkgo leaves ---------- */
+        if (reduce) return;
+        const cv = document.getElementById("leaves"),
+          ctx = cv.getContext("2d");
+        const maple = new Path2D(
+          "M0,-1 L.15,-.55 L.45,-.72 L.38,-.3 L.85,-.38 L.66,-.06 L.96,.14 L.5,.25 L.6,.52 L.1,.35 L.04,.95 L-.04,.95 L-.1,.35 L-.6,.52 L-.5,.25 L-.96,.14 L-.66,-.06 L-.85,-.38 L-.38,-.3 L-.45,-.72 L-.15,-.55 Z",
+        );
+        const ginkgo = new Path2D(
+          "M0,.95 L0,.25 C-.95,0 -.85,-.9 -.32,-.86 Q-.05,-.62 0,-.78 Q.05,-.62 .32,-.86 C.85,-.9 .95,0 0,.25 Z",
+        );
+        const colors = [
+          "#c0392b",
+          "#d35400",
+          "#e67e22",
+          "#a93226",
+          "#cb4335",
+          "#e3a33b",
+          "#d4ac0d",
+        ];
+        let W,
+          H,
+          dpr,
+          leaves = [];
+        const resize = () => {
+          dpr = Math.min(devicePixelRatio || 1, 2);
+          W = innerWidth;
+          H = innerHeight;
+          cv.width = W * dpr;
+          cv.height = H * dpr;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const make = (initial) => {
+          const gk = Math.random() < 0.25;
+          return {
+            x: Math.random() * W,
+            y: initial ? Math.random() * H : -30 - Math.random() * 80,
+            s: 7 + Math.random() * 10,
+            vy: 0.35 + Math.random() * 0.7,
+            sway: 0.6 + Math.random() * 1.4,
+            ph: Math.random() * 6.28,
+            fq: 0.008 + Math.random() * 0.012,
+            rot: Math.random() * 6.28,
+            vr: (Math.random() - 0.5) * 0.03,
+            flip: Math.random() * 6.28,
+            vf: 0.02 + Math.random() * 0.03,
+            path: gk ? ginkgo : maple,
+            c: gk ? "#e2b33c" : colors[(Math.random() * colors.length) | 0],
+            a: 0.5 + Math.random() * 0.35,
+          };
+        };
+        resize();
+        addEventListener("resize", resize);
+        const N = innerWidth < 600 ? 12 : 24;
+        for (let k = 0; k < N; k++) leaves.push(make(true));
+        let t = 0,
+          run = true;
+        document.addEventListener("visibilitychange", () => {
+          run = !document.hidden;
+          if (run) requestAnimationFrame(tick);
+        });
+        function tick() {
+          if (!run) return;
+          t++;
+          ctx.clearRect(0, 0, W, H);
+          for (const l of leaves) {
+            l.y += l.vy;
+            l.x += Math.sin(t * l.fq + l.ph) * l.sway * 0.5;
+            l.rot += l.vr;
+            l.flip += l.vf;
+            if (l.y > H + 30 || l.x < -40 || l.x > W + 40)
+              Object.assign(l, make(false));
+            ctx.save();
+            ctx.translate(l.x, l.y);
+            ctx.rotate(l.rot);
+            ctx.scale(l.s * Math.cos(l.flip), l.s);
+            ctx.globalAlpha = l.a;
+            ctx.fillStyle = l.c;
+            ctx.fill(l.path);
+            ctx.restore();
+          }
+          requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      })();
+    </script>
+  </body>
+</html>
